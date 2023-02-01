@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const petSchema = new Schema({
+    kind: {type: String, required: true},
     breed: { type: String, requied: false  },
     color: { type: String , requied: false },
     location: {type: String, requied: true },

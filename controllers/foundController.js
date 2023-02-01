@@ -1,7 +1,7 @@
 module.exports = (req, res) => {
     if (req.method == 'GET') {
-        console.log('found controller registerd GET method')
+        res.render("upload", {title: "Found Animal"})
     } else if (req.method == 'POST') {
-        console.log('found controller registerd POST method')
+        //get animal data from form
     }
 }
