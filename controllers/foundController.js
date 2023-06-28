@@ -1,7 +1,10 @@
-module.exports = (req, res) => {
+const foundPetsDb = require("../models/PetFound");
+
+module.exports = async (req, res) => {
     if (req.method == 'GET') {
-        res.render("upload", {title: "Found Animal"})
+        let animals = await foundPetsDb.find({}).populate("foundBy").lean();
+        res.render("animals-found", {title: "Found Animals", animals})
     } else if (req.method == 'POST') {
-        //get animal data from form
+        console.log(req.body)
     }
 }

@@ -6,11 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="static/favicon.png">
+    <link rel="stylesheet" href="/static/styles/main.css">
+    <link rel="stylesheet" href="/static/styles/animals.css">
+    <link rel="stylesheet" href="/static/styles/home.css">
     <title>{{title}}</title>
 </head>
 
 <body>
-    {{{body}}}
+    <header>
+        <nav>
+            <a href="/lost">I lost a pet</a>
+            <a href="/"><h1>Welcome to Pet Shelter!</h1></a>
+            <a href="/found">I found a pet</a>
+        </nav>
+    </header>
+    <main>
+        {{{body}}}
+    </main>
+    <footer>&lt;&lt;&copy;ak2023&gt;&gt;</footer>
 </body>
 
 </html>

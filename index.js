@@ -5,9 +5,9 @@ const handlebars = require("express-handlebars");
 
 const app=express();
 
-// const Person = require("./models/Person")
-// const PetLost = require("./models/PetLost");
-// const PetFound = require("./models/PetFound")
+const Person = require("./models/Person")
+const PetLost = require("./models/PetLost");
+const PetFound = require("./models/PetFound")
 
 
 init();
@@ -15,7 +15,7 @@ init();
 async function init() {
     
     await db();
-    routes(app);
+    
 
     //seedData();
 
@@ -24,6 +24,8 @@ async function init() {
 
     app.use('/static', express.static('./static'));
     app.use(express.urlencoded({ extended: false }));
+    app.use(express.json({ extended: false }));
+    routes(app);
 
 }
 
@@ -36,6 +38,13 @@ function seedData() {
 
     rachel.save(() => console.log(`Saved ${rachel.firstName} in databse`));
 
+    let phoebe = new Person({
+        firstName: "Phoebe",
+        phoneNo: "203-500-6294"
+    });
+
+    phoebe.save(() => console.log(`Saved ${phoebe.firstName} in databse`));
+
     let lostDog = new PetLost({
         kind: "Dog",
         name: "Maxi",
@@ -46,14 +55,30 @@ function seedData() {
         lostBy: rachel
     });
 
-    lostDog.save(() => console.log(`Saved ${lostDog.name} in databse`));
-
-    let phoebe = new Person({
-        firstName: "Phoebe",
-        phoneNo: "203-500-6294"
+    
+    let lostDog2 = new PetLost({
+        kind: "Dog",
+        name: "Roni",
+        breed: "Bolognese",
+        age: 7,
+        color: "white",
+        imageUrl: "static/images/bolognese-dog.jpg",
+        lostBy: rachel
     });
 
-    phoebe.save(() => console.log(`Saved ${phoebe.firstName} in databse`));
+    let lostCat = new PetLost({
+        kind: "Cat",
+        name: "Jane",
+        breed: "Ragdoll",
+        age: 2,
+        color: "latte",
+        imageUrl: "static/images/ragdoll.jpg",
+        lostBy: phoebe
+    });
+
+    lostDog.save(() => console.log(`Saved ${lostDog.name} in databse`));
+    lostDog2.save(() => console.log(`Saved ${lostDog2.name} in databse`));
+    lostCat.save(() => console.log(`Saved ${lostCat.name} in databse`));
 
     let foundChinchilla = new PetFound({
         kind: "Chinchilla",

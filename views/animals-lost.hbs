@@ -1,0 +1,54 @@
+<div class="animals">
+    <div class="lost-animals-div">
+        <h2>Lost</h2>
+        <ul class="lost-animals">
+            {{#each animals}}
+            <li>
+                <p class="name">{{name}}</p>
+                <p>{{breed}}</p>
+                <p>Owner: {{lostBy.firstName}} {{lostBy.lastName}}</p>
+                <img src="{{imageUrl}}" height="100">
+            </li>
+            {{else}}
+            <p>No animals yet..</p>
+            {{/each}}
+        </ul>
+    </div>
+
+    {{!-- pets that are lost and a form to add the pet you lost --}}
+
+    <form class="add-animal" action="#" method="POST" enctype="multipart/form-data" onsubmit=onSubmitLost(event)>
+        <fieldset>
+            <legend> About the animal:</legend>
+            <label>Type:
+                <input type="text" name="type">
+            </label>
+            <br>
+            <label>Breed:
+                <input type="text" name="breed">
+            </label>
+            <br>
+            <label>Name:
+                <input type="text" name="name">
+            </label>
+            <br>
+            <label>Age:
+                <input type="number" min="1" name="age">
+            </label>
+            <br>
+            <label>Color:
+                <input type="text" name="color">
+            </label>
+            <br>
+            <label>Picture:
+                <div id="upload-btn-div">
+                    <input type="file" id="upload-btn" name="image">
+                    <img src="/static/up-arrow.jpg" width="20px">
+                </div>
+            </label>
+        </fieldset>
+        {{>personal-info}}
+        <button type="submit" id="submit-button">Submit</button>
+    </form>
+    <script src="/static/js/validateForm.js"></script>
+</div>

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --bckg-color: rgb(242, 185, 156);
+    --main-color: rgb(251, 231, 76);
+    --secondery-color: rgb(252, 88, 0);
+    --highlight-color: rgb(201, 20, 0);
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+    /* position: relative; */
+    background-color: var(--bckg-color);
+    background-image: url('/static/Dog-Wallpaper.jpeg');
+}
+
+header {
+    position: fixed;
+    background-color: var(--main-color);
+    padding: 5px;
+    width: 100%;
+    box-shadow: var(--main-color) 3px 3px 5px 5px;
+}
+
+a {
+    color: var(--secondery-color);
+    text-decoration: none;
+}
+
+h1 {
+    color: var(--highlight-color);
+    display: inline;
+    padding: 0px 30px;
+    font-style: italic;
+    text-shadow: var(--secondery-color) 1px 1px 1px;
+}
+
+nav {
+    text-align: center;
+    margin: 5px;
+}
+
+main {
+    position: relative;
+    top: 50px;
+    min-height: 90vh;
+}
+
+footer {
+    color: var(--secondery-color);
+    text-align: center;
+}

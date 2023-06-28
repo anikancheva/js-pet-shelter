@@ -1,0 +1,103 @@
+.animals {
+    border-radius: 6pt;
+    backdrop-filter: brightness(40%);
+    padding: 12pt;
+}
+
+.lost-animals-div,
+.found-animals-div {
+    padding: 1%;
+    background-color: var(--main-color);
+    border: 2px solid var(--highlight-color);
+    border-radius: 5px;
+
+}
+
+.lost-animals,
+.found-animals {
+    margin: 10px;
+    display: grid;
+    grid-template: "a a a a a" 20%;
+    list-style: none;
+}
+
+h2 {
+    color: var(--highlight-color);
+    text-align: center;
+    padding: 15px;
+
+}
+
+img {
+    border-radius: 5px;
+}
+
+p {
+    color: var(--highlight-color);
+    font-size: 0.8em;
+}
+
+.name {
+    font-size: 1.2em;
+    font-style: oblique;
+    text-align: start;
+}
+
+form {
+    display: flex;
+    border: 2px solid var(--highlight-color);
+    border-radius: 5px;
+    margin: 10px 10px;
+    width: fit-content;
+    background-color: var(--main-color);
+
+}
+
+fieldset {
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+    text-align: start;
+    color: var(--highlight-color);
+    border: 1px solid var(--highlight-color);
+    border-radius: 5px;
+
+}
+
+fieldset label {
+font-size: 0.8em;
+}
+/* 
+fieldset legend {
+    color: var(--highlight-color);
+}  */
+
+input {
+    margin: 3px;
+}
+
+#upload-btn-div {
+    display: inline;
+    width: fit-content;
+    border: 2px solid var(--highlight-color);
+    border-radius: 12px;
+    background-color: var(--highlight-color);
+   
+}
+
+#upload-btn {
+    opacity: 0%;
+    width: 0px;
+    margin-right: -7px;
+}
+
+#submit-button {
+    height: fit-content;
+    align-self: center;
+    color: var(--main-color);
+    background-color: var(--highlight-color);
+    border-radius: 2px;
+    border-color: var(--highlight-color);
+    margin: 5px;
+    padding: 5px;
+}

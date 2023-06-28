@@ -1,0 +1,52 @@
+<div class="animals">
+    <div class="found-animals-div">
+        <h2>Found</h2>
+        <ul class="found-animals">
+            {{#each animals}}
+            <li>
+                <p>{{kind}}</p>
+                {{!-- <p>{{breed}}</p> --}}
+                <p>{{color}}</p>
+                <p>Where: {{location}}</p>
+                <p>Found: {{foundBy.firstName}}</p>
+                <img src="{{imageUrl}}" height="100">
+            </li>
+            {{else}}
+            <p>No animals yet..</p>
+            {{/each}}
+        </ul>
+    </div>
+
+    {{!-- pets that are found and a form to add the pet you found --}}
+
+    <form class="add-animal" action="#" method="POST" enctype="multipart/form-data" onsubmit=onSubmitFound(event)>
+        <fieldset>
+            <legend> About the animal:</legend>
+            <label>Type:
+                <input type="text" name="type">
+            </label>
+            <br>
+            <label>Breed:
+                <input type="text" name="breed">
+            </label>
+            <br>
+            <label>Color:
+                <input type="text" name="color">
+            </label>
+            <br>
+            <label>Where did you find the animal?
+                <input type="text" name="location">
+            </label>
+            <br>
+            <label>Picture:
+                <div id="upload-btn-div">
+                    <input type="file" id="upload-btn" name="image">
+                    <img src="/static/up-arrow.jpg" width="20px">
+                </div>
+            </label>
+        </fieldset>
+        {{>personal-info}}
+        <button type="submit" id="submit-button">Submit</button>
+        <script src="/static/js/validateForm.js"></script>
+    </form>
+</div>
